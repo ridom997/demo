@@ -1,16 +1,13 @@
 package com.ridomz.app.demo.controller;
 
-import com.google.gson.Gson;
-import com.ridomz.app.demo.dto.response.BusinessTypeResponseRecord;
+import com.ridomz.app.demo.dto.request.BusinessTypeDTO;
 import com.ridomz.app.demo.entity.BusinessTypeEntity;
 import com.ridomz.app.demo.service.BusinessTypeService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.function.EntityResponse;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/businessType")
@@ -20,8 +17,8 @@ public class BusinessTypeController {
     private BusinessTypeService businessTypeService;
 
     @PostMapping
-    public BusinessTypeEntity addBusinessTypeController(@RequestBody BusinessTypeEntity businessTypeEntity) {
-        return businessTypeService.add(businessTypeEntity);
+    public BusinessTypeEntity addBusinessTypeController(@Valid @RequestBody BusinessTypeDTO businessType) {
+        return businessTypeService.add(businessType);
     }
 
     @GetMapping

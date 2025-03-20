@@ -1,4 +1,4 @@
-package com.ridomz.app.demo.dto;
+package com.ridomz.app.demo.dto.enums;
 
 public enum StatusEnum {
     ACTIVE("ID","ACTIVE"),
