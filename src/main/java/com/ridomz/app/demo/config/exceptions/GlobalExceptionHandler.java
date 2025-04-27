@@ -1,4 +1,4 @@
-package com.ridomz.app.demo.config;
+package com.ridomz.app.demo.config.exceptions;
 
 
 import com.ridomz.app.demo.dto.exceptions.BaseException;
